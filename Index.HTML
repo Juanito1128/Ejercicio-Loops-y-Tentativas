@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Bucle While</title>
+</head>
+<body>
+    <h1>Ejemplo de Bucle While en JavaScript</h1>
+    <script>
+        function contarDesdeHasta(inicio, fin) {
+            if (isNaN(inicio) || isNaN(fin)) {
+                console.log("Por favor ingresa números válidos.");
+                return;
+            }
+            let paso = inicio < fin ? 1 : -1;
+            while (inicio !== fin + paso) {
+                console.log(inicio);
+                inicio += paso;
+            }
+        }
+
+        function cuentaProgresiva() {
+            let cuenta = parseInt(prompt("Ingresa un número:"));
+            if (isNaN(cuenta)) {
+                console.log("Por favor ingresa un número válido.");
+            } else {
+                contarDesdeHasta(0, cuenta);
+            }
+        }
+
+        // Ejecutar las funciones
+        contarDesdeHasta(1, 10);   // Contador de 1 a 10
+        contarDesdeHasta(10, 0);   // Contador de 10 a 0
+        cuentaProgresiva();         // Cuenta progresiva desde 0 hasta el número ingresado
+    </script>
+</body>
+</html>
